@@ -1,0 +1,39 @@
+﻿<Window x:Class="AVerCapSDKDemo.CaptureImage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Capture Image" Height="380" Width="453" ResizeMode="NoResize" Closing="Window_Closing">
+    <Grid>
+        <Label Content="Image Format:" Height="28" HorizontalAlignment="Left" Margin="55,15,0,0" Name="label1" VerticalAlignment="Top" />
+        <Label Content="Numbers Per Second:" Height="28" HorizontalAlignment="Left" Margin="14,219,0,0" Name="label2" VerticalAlignment="Top" />
+        <Label Content="Save Path:" Height="28" HorizontalAlignment="Left" Margin="79,253,0,0" Name="label3" VerticalAlignment="Top" />
+        <Label Content="Duration:" Height="28" HorizontalAlignment="Left" Margin="85,185,0,0" Name="label4" VerticalAlignment="Top" />
+        <Label Content="Duration Mode:" Height="28" HorizontalAlignment="Left" Margin="47,151,0,0" Name="label5" VerticalAlignment="Top" />
+        <Label Content="Capture Area:" Height="28" HorizontalAlignment="Left" Margin="60,83,0,0" Name="label6" VerticalAlignment="Top" />
+        <Label Content="Include Overlay:" Height="28" HorizontalAlignment="Left" Margin="46,49,0,0" Name="label7" VerticalAlignment="Top" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="170,20,0,0" Name="comboBox_ImageFormat" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_ImageFormat_SelectionChanged">
+            <ComboBoxItem>BMP</ComboBoxItem>
+            <ComboBoxItem>JPG</ComboBoxItem>
+            <ComboBoxItem>PNG</ComboBoxItem>
+            <ComboBoxItem>TIFF</ComboBoxItem>
+        </ComboBox>
+        <RadioButton Content="Yes" Height="16" HorizontalAlignment="Left" Margin="170,54,0,0" Name="radioButton_OverlayYes" VerticalAlignment="Top" GroupName="IncludeOverlay" IsChecked="True" />
+        <RadioButton Content="No" Height="16" HorizontalAlignment="Left" Margin="257,54,0,0" Name="radioButton_OverlayNo" VerticalAlignment="Top" GroupName="IncludeOverlay" />
+        <Label Content="Left:" Height="28" HorizontalAlignment="Left" Margin="170,83,0,0" Name="label8" VerticalAlignment="Top" />
+        <Label Content="Bottom:" Height="28" HorizontalAlignment="Left" Margin="280,117,0,0" Name="label9" VerticalAlignment="Top" />
+        <Label Content="Right:" Height="28" HorizontalAlignment="Left" Margin="161,117,0,0" Name="label10" VerticalAlignment="Top" />
+        <Label Content="Top:" Height="28" HorizontalAlignment="Left" Margin="297,83,0,0" Name="label11" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="210,85,0,0" Name="textBox_Left" VerticalAlignment="Top" Width="53" KeyDown="textBox_KeyPress" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="338,119,0,0" Name="textBox_Bottom" VerticalAlignment="Top" Width="53" KeyDown="textBox_KeyPress" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="338,85,0,0" Name="textBox_Top" VerticalAlignment="Top" Width="53" KeyDown="textBox_KeyPress" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="210,119,0,0" Name="textBox_Right" VerticalAlignment="Top" Width="53" KeyDown="textBox_KeyPress" />
+        <RadioButton Content="Time" Height="16" HorizontalAlignment="Right" Margin="0,156,130,0" Name="radioButton_Time" VerticalAlignment="Top" GroupName="DurationMode" Checked="radioButton_Time_Checked" />
+        <RadioButton Content="Count" Height="16" HorizontalAlignment="Left" Margin="170,156,0,0" Name="radioButton_Count" VerticalAlignment="Top" GroupName="DurationMode" IsChecked="True" Checked="radioButton_Count_Checked" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="170,187,0,0" Name="textBox_Duration" VerticalAlignment="Top" Width="93" KeyDown="textBox_KeyPress" Text="10" />
+        <Label Content="pcs" Height="28" HorizontalAlignment="Left" Margin="280,185,0,0" Name="label_Unit" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="170,221,0,0" Name="textBox_CapNumPerSec" VerticalAlignment="Top" Width="93" KeyDown="textBox_KeyPress" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="170,255,0,0" Name="textBox_SavePath" VerticalAlignment="Top" Width="162" />
+        <Button Content="Browse..." Height="23" HorizontalAlignment="Left" Margin="338,255,0,0" Name="button_Browse" VerticalAlignment="Top" Width="75" Click="button_Browse_Click" />
+        <Button Content="Capture Single Image" Height="23" HorizontalAlignment="Left" Margin="253,302,0,0" Name="button_CaptureSingleImage" VerticalAlignment="Top" Width="143" Click="button_CaptureSingleImage_Click" />
+        <Button Content="Start Capture" Height="23" HorizontalAlignment="Left" Margin="107,302,0,0" Name="button_StartStopCap" VerticalAlignment="Top" Width="89" Click="button_StartStopCap_Click" />
+    </Grid>
+</Window>

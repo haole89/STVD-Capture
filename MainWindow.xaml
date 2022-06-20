@@ -1,0 +1,41 @@
+﻿<Window x:Class="AVerCapSDKDemo.MainWindow"
+        xmlns:wfi ="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        xmlns:wf ="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TV Workstation - Capture" Width="480" Height="360"
+        Icon="/res/icon1.ico" SizeChanged="MainWindow_Resize" Foreground="Black" Background="Blue">
+
+    <DockPanel Name="panel">
+        <Menu DockPanel.Dock="Top" Foreground="Black" ForceCursor="False">
+            <MenuItem Header="_File">
+                <MenuItem Header="Restore The Last Video Device Set" Click="MenuItem_Click" Name="IsRestore" />
+                <Separator />
+                <MenuItem Header="_Exit" Click="exitMenuItem_Click" />
+            </MenuItem>
+            <MenuItem Name="deviceMenuItem" Header="_Device" >
+            </MenuItem>
+            <MenuItem Name="functionMenuItem" Header="Fun_ction" SubmenuOpened="functionMenuItem_DropDownOpening" Click="functionMenuItem_Click">
+                <MenuItem IsEnabled="False" Name="startStreamingMenuItem" Header="Start Streaming" Click="startStreamingMenuItem_Click" />
+                <MenuItem IsEnabled="False" Name="stopStreamingMenuItem" Header="Stop Streaming" Click="stopStreamingMenuItem_Click" />
+                <MenuItem IsEnabled="False" Name="SerialNumberMenuItem" Header="SerialNumber" Click="SerialNumberMenuItem_Click" />
+                <Separator />
+                <MenuItem IsEnabled="False" Name="DeviceSettingMenuItem" Header="Device Setting" Click="DeviceSettingMenuItem_Click" />
+                <MenuItem IsEnabled="False" Name="PreviewSettingMenuItem" Header="Preview Setting" Click="PreviewSettingMenuItem_Click" />
+                <MenuItem IsEnabled="False" Name="VideoProcessMenuItem" Header="Video Process" Click="VideoProcessMenuItem_Click" />
+               
+                <Separator />
+                <MenuItem IsEnabled="False" Name="CaptureImageMenuItem" Header="Capture Image" Click="CaptureImageMenuItem_Click" />
+                <MenuItem IsEnabled="False" Name="RecordMenuItem" Header="Record" Click="RecordMenuItem_Click" />
+          
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_About" Click="aboutMenuItem_Click"/>
+            </MenuItem>
+        </Menu>
+        <wfi:WindowsFormsHost DockPanel.Dock="Top">
+            <wf:PictureBox BackColor="Black" x:Name="pictureBoxShowMain" Anchor="Top, Left" Dock="Fill">
+                </wf:PictureBox>
+        </wfi:WindowsFormsHost>
+    </DockPanel>
+</Window>

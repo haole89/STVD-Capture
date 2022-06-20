@@ -1,0 +1,69 @@
+﻿<Window x:Class="AVerCapSDKDemo.DeviceSetting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Device Setting" Height="502" Width="410" Name="DeviceSettingDlg" xmlns:my="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms" ResizeMode="NoResize" Closing="DeviceSettingDlg_Closing" Closed="DeviceSettingDlg_Closed">
+    <Grid>
+        <TabControl Height="463" HorizontalAlignment="Left" Name="tabControl1" VerticalAlignment="Top" Width="384">
+            <TabItem Header="Video Device" Name="VideoDevice" DataContext="{Binding}">
+                <Grid>
+                    <TextBox Height="156" HorizontalAlignment="Left" Margin="10,13,0,0" Name="textBox_InputVideoInfo" VerticalAlignment="Top" Width="354" IsReadOnly="True" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Visible" />
+                    <Label Content="Video Source:" Height="28" HorizontalAlignment="Left" Margin="19,176,0,0" Name="label1" VerticalAlignment="Top" Width="90" HorizontalContentAlignment="Right" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="127,180,0,0" Name="comboBox_VideoSource" VerticalAlignment="Top" Width="213" DropDownClosed="comboBox_VideoSource_DropDownClosed" />
+                    <Label Content="Video Format:" Height="28" HorizontalAlignment="Left" Margin="19,210,0,0" Name="label2" VerticalAlignment="Top" Width="90" FontWeight="Normal" HorizontalContentAlignment="Right" />
+                    <RadioButton Content="NTSC" Height="16" HorizontalAlignment="Left" Margin="127,215,0,0" Name="radioButton_NTSC" VerticalAlignment="Top" Checked="radioButton_NTSC_Checked" />
+                    <RadioButton Content="PAL" Height="16" HorizontalAlignment="Left" Margin="224,215,0,0" Name="radioButton_PAL" VerticalAlignment="Top" Checked="radioButton_PAL_Checked" />
+                    <Label Content="Resolution:" Height="28" HorizontalAlignment="Left" Margin="19,238,0,0" Name="label3" VerticalAlignment="Top" Width="90" HorizontalContentAlignment="Right" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="127,238,0,0" Name="comboBox_Resolution" VerticalAlignment="Top" Width="213" DropDownClosed="comboBox_Resolution_DropDownClosed" />
+                    <CheckBox Content="Custom" Height="16" HorizontalAlignment="Left" Margin="56,278,0,0" Name="checkBox_Custom" VerticalAlignment="Top" Click="checkBox_Custom_Click" />
+                    <Label Content="Width:" Height="28" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="106,269,0,0" Name="label4" VerticalAlignment="Top" Width="69" />
+                    <Label Content="Height:" Height="28" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="106,298,0,0" Name="label5" VerticalAlignment="Top" Width="69" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="176,272,0,0" Name="textBox_Width" VerticalAlignment="Top" Width="72" KeyDown="textBox_KeyPress" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="176,301,0,0" Name="textBox_Height" VerticalAlignment="Top" Width="72" KeyDown="textBox_KeyPress" />
+                    <Button Content="Set" Height="23" HorizontalAlignment="Left" Margin="279,274,0,0" Name="button_SetResolution" VerticalAlignment="Top" Width="61" Click="button_SetResolution_Click" />
+                    <Label Content="Frame Rate:" Height="28" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="19,332,0,0" Name="label6" VerticalAlignment="Top" Width="90" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="127,332,0,0" Name="comboBox_FrameRate" VerticalAlignment="Top" Width="213" DropDownClosed="comboBox_FrameRate_DropDownClosed" />
+                    <Label Content="Frame Rate:" Height="28" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="19,366,0,0" Name="label7" VerticalAlignment="Top" Width="90" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="127,371,0,0" Name="textBox_FrameRate" VerticalAlignment="Top" Width="121" KeyDown="textBox_KeyPress" />
+                    <Button Content="Set" Height="23" HorizontalAlignment="Left" Margin="279,370,0,0" Name="button_SetFrameRate" VerticalAlignment="Top" Width="61" Click="button_SetFrameRate_Click" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Audio Device" Name="AudioDevice">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*" />
+                        <ColumnDefinition Width="324*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Audio Format:" Height="28" HorizontalAlignment="Left" Margin="32,198,0,0" Name="label9" VerticalAlignment="Top" HorizontalContentAlignment="Right" Grid.Column="1" />
+                    <Label Content="Audio Source:" Height="28" HorizontalAlignment="Left" Margin="28,41,0,0" Name="label10" VerticalAlignment="Top" HorizontalContentAlignment="Right" Grid.Column="1" />
+                    <Label Content="Audio Capture Source:" Height="28" HorizontalAlignment="Left" Margin="19,130,0,0" Name="label11" VerticalAlignment="Top" Width="155" HorizontalContentAlignment="Right" Grid.ColumnSpan="2" />
+                    <Label Content="Input Type:" Height="28" HorizontalAlignment="Left" Margin="49,164,0,0" Name="label12" VerticalAlignment="Top" HorizontalContentAlignment="Right" Grid.Column="1" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="141,41,0,0" Name="comboBox_AudioSource" VerticalAlignment="Top" Width="120" DropDownClosed="comboBox_AudioSource_DropDownClosed" Grid.Column="1" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="141,130,0,0" Name="comboBox_AudioCaptureSource" VerticalAlignment="Top" Width="120"  DropDownClosed="comboBox_AudioCaptureSource_DropDownClosed" Grid.Column="1" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="141,198,0,0" Name="comboBox_AudioFormat" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="141,164,0,0" Name="comboBox_InputType" VerticalAlignment="Top" Width="120" Grid.Column="1" />
+                    <CheckBox Content="Third-Party(Sound Card...)" Height="16" HorizontalAlignment="Left" Margin="9,108,0,0" Name="checkBox_ThirdParty" VerticalAlignment="Top" Click="checkBox_ThirdParty_Checked" Grid.ColumnSpan="2" />
+                    <Button Content="Set" Height="23" HorizontalAlignment="Left" Margin="105,239,0,0" Name="button_SetThirdPart" VerticalAlignment="Top" Width="75" Click="button_SetThirdPart_Click" Grid.Column="1" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Miscellaneous" Name="Miscellaneous">
+                <Grid>
+                    <GroupBox Header="Channels Of Embedded Audio" Height="112" HorizontalAlignment="Left" Margin="22,16,0,0" Name="groupBox1" VerticalAlignment="Top" Width="329">
+                        <Grid>
+                            <Label Content="Channels:" Height="28" HorizontalAlignment="Left" Margin="21,29,0,0" Name="label13" VerticalAlignment="Top" Width="68" HorizontalContentAlignment="Right" />
+                            <ComboBox Height="23" HorizontalAlignment="Left" Margin="109,31,0,0" Name="comboBox_Channels" VerticalAlignment="Top" Width="158" SelectionChanged="comboBoxChannel_SelectionChangeCommitted">
+                                <ComboBoxItem>1, 2</ComboBoxItem>
+                                <ComboBoxItem>3, 4</ComboBoxItem>
+                                <ComboBoxItem>5, 6</ComboBoxItem>
+                                <ComboBoxItem>7, 8</ComboBoxItem>
+                                <ComboBoxItem>9, 10</ComboBoxItem>
+                                <ComboBoxItem>11, 12</ComboBoxItem>
+                                <ComboBoxItem>13, 14</ComboBoxItem>
+                                <ComboBoxItem>15, 16</ComboBoxItem>
+                            </ComboBox>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

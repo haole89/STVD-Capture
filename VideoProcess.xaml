@@ -1,0 +1,98 @@
+﻿<Window x:Class="AVerCapSDKDemo.VideoProcess"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="VideoProcess" Height="640" Width="407" ResizeMode="NoResize" Closing="Window_Closing">
+    <Grid>
+        <TabControl Height="596" HorizontalAlignment="Left" Name="tabControl1" VerticalAlignment="Top" Width="384">
+            <TabItem Header="Common" Name="Common">
+                <Grid>
+                    <GroupBox Header="De-Interlance:" Height="72" HorizontalAlignment="Left" Margin="17,15,0,0" Name="groupBox16" VerticalAlignment="Top" Width="345">
+                        <Grid>
+                            <Label Content="De-Interlance:" Height="28" HorizontalAlignment="Left" Margin="62,11,0,0" Name="label9" VerticalAlignment="Top" HorizontalContentAlignment="Right" />
+                            <ComboBox Height="23" HorizontalAlignment="Left" Margin="159,13,0,0" Name="comboBox_DeInterlance" VerticalAlignment="Top" Width="143" SelectionChanged="comboBox_DeInterlance_SelectionChanged">
+                                <ComboBoxItem>None</ComboBoxItem>
+                                <ComboBoxItem>Weave</ComboBoxItem>
+                                <ComboBoxItem>Bob</ComboBoxItem>
+                                <ComboBoxItem>Blend</ComboBoxItem>
+                            </ComboBox>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Video Enhancement" Height="74" HorizontalAlignment="Left" Margin="17,93,0,0" Name="groupBox17" VerticalAlignment="Top" Width="345">
+                        <Grid>
+                            <Label Content="Video Enhancement:" Height="28" HorizontalAlignment="Left" Margin="25,11,0,0" Name="label8" VerticalAlignment="Top" HorizontalContentAlignment="Right" />
+                            <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,13,31,0" Name="comboBox_Enhancement" VerticalAlignment="Top" Width="143" SelectionChanged="comboBox_Enhancement_SelectionChanged">
+                                <ComboBoxItem>None</ComboBoxItem>
+                                <ComboBoxItem>Normal</ComboBoxItem>
+                                <ComboBoxItem>Split</ComboBoxItem>
+                                <ComboBoxItem>Compare</ComboBoxItem>
+                            </ComboBox>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Noise Reduction" Height="78" HorizontalAlignment="Left" Margin="17,172,0,0" Name="groupBox18" VerticalAlignment="Top" Width="345">
+                        <Grid>
+                            <Label Content="Noise Reduction:" Height="28" HorizontalAlignment="Left" Margin="45,15,0,0" Name="label10" VerticalAlignment="Top" HorizontalContentAlignment="Right" />
+                            <RadioButton Content="Enable" Height="16" HorizontalAlignment="Left" Margin="159,21,0,0" Name="radioButton_NoiseEnable" VerticalAlignment="Top" Checked="radioButton_NoiseEnable_Checked" />
+                            <RadioButton Content="Disable" Height="16" Margin="244,21,14,0" Name="radioButton_NoiseDisable" VerticalAlignment="Top" Checked="radioButton_NoiseDisable_Checked" />
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Clip" Name="Clip">
+                <Grid>
+                    <GroupBox Header="Clip Video" Height="57" HorizontalAlignment="Left" Margin="53,38,0,0" Name="groupBox8" VerticalAlignment="Top" Width="270">
+                        <Grid>
+                            <Label Content="Clip Video:" Height="28" HorizontalAlignment="Left" Margin="9,6,0,0" Name="label11" VerticalAlignment="Top" />
+                            <RadioButton  Content="NO" Height="16" HorizontalAlignment="Left" IsChecked="False" Margin="92,11,0,0" Name="radioButtonNO" VerticalAlignment="Top" Checked="radioButtonNO_Checked" />
+                            <RadioButton  Content="YES" Height="16" HorizontalAlignment="Right" Margin="0,11,69,0" Name="radioButtonYES" VerticalAlignment="Top" Checked="radioButtonYES_Checked" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Capture Area" Height="98" HorizontalAlignment="Left" Margin="53,101,0,0" Name="groupBox9" VerticalAlignment="Top" Width="270">
+                        <Grid>
+                            <Label Content="Left:" Height="28" HorizontalAlignment="Left" Margin="6,6,0,0" Name="label12" VerticalAlignment="Top" />
+                            <TextBox Height="23" HorizontalAlignment="Left"  Margin="48,8,0,0" Name="textBoxLeft" VerticalAlignment="Top" Width="74" KeyDown="textBox_KeyPress" />
+                            <Label Content="Top:" Height="28" HorizontalAlignment="Left" Margin="126,8,0,0" Name="label13" VerticalAlignment="Top" />
+                            <TextBox Height="23" HorizontalAlignment="Left"  Margin="178,8,0,0" Name="textBoxTop" VerticalAlignment="Top" Width="74" KeyDown="textBox_KeyPress" />
+                            <Label Content="Right:" Height="28" HorizontalAlignment="Left" Margin="6,35,0,0" Name="label14" VerticalAlignment="Top" />
+                            <TextBox Height="23" HorizontalAlignment="Left"  Margin="48,37,0,0" Name="textBoxRight" VerticalAlignment="Top" Width="74" KeyDown="textBox_KeyPress" />
+                            <Label Content="Bottom:" Height="28" HorizontalAlignment="Left" Margin="126,35,0,0" Name="label15" VerticalAlignment="Top" />
+                            <TextBox Height="23" HorizontalAlignment="Left"  Margin="178,35,0,0" Name="textBoxBottom" VerticalAlignment="Top" Width="74" KeyDown="textBox_KeyPress" />
+                        </Grid>
+                    </GroupBox>
+                    <Button Content="Set" Height="23" HorizontalAlignment="Left" Margin="145,224,0,0" Name="button_SetClip" VerticalAlignment="Top" Width="75" Click="button_SetClip_Click" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Downscale" Name="Downscale">
+                <Grid>
+                    <GroupBox Header="Down Scale Video Size" Height="292" HorizontalAlignment="Left" Margin="62,48,0,0" Name="groupBox10" VerticalAlignment="Top" Width="266">
+                        <Grid>
+                            <RadioButton Content="None" Height="16" HorizontalAlignment="Left" Margin="74,35,0,0" Name="radioButton_None" VerticalAlignment="Top" Checked="radioButton_None_Checked" />
+                            <RadioButton Content="Custom" Height="16" HorizontalAlignment="Left" Margin="74,123,0,0" Name="radioButton_Custom" VerticalAlignment="Top" Checked="radioButton_Custom_Checked" />
+                            <RadioButton Content="Half Both" Height="16" HorizontalAlignment="Left" Margin="74,101,0,0" Name="radioButton_HalfBoth" VerticalAlignment="Top" Checked="radioButton_HalfBoth_Checked" />
+                            <RadioButton Content="Half Width" Height="16" HorizontalAlignment="Left" Margin="74,79,0,0" Name="radioButton_HalfWidth" VerticalAlignment="Top" Checked="radioButton_HalfWidth_Checked" />
+                            <RadioButton Content="Half Height" Height="16" HorizontalAlignment="Left" Margin="74,57,0,0" Name="radioButton_HalfHeight" VerticalAlignment="Top" Checked="radioButton_HalfHeight_Checked" />
+                            <Label Content="Width:" Height="28" HorizontalAlignment="Left" Margin="122,142,0,0" Name="label16" VerticalAlignment="Top" />
+                            <Label Content="Height:" Height="28" HorizontalAlignment="Left" Margin="118,166,0,0" Name="label17" VerticalAlignment="Top" />
+                            <TextBox Height="23" HorizontalAlignment="Left" Margin="173,144,0,0" Name="textBox_Width" VerticalAlignment="Top" Width="50" IsEnabled="False" KeyDown="textBox_KeyPress" />
+                            <TextBox Height="23" HorizontalAlignment="Left" Margin="173,168,0,0" Name="textBox_Height" VerticalAlignment="Top" Width="50" IsEnabled="False" KeyDown="textBox_KeyPress" />
+                            <Button Content="Set" Height="23" HorizontalAlignment="Left" Margin="74,213,0,0" Name="button_SetDownscale" VerticalAlignment="Top" Width="75" Click="button_SetDownscale_Click" />
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Rotate" Name="Rotate">
+                <Grid>
+                    <GroupBox Header="Rotate Video" Height="120" HorizontalAlignment="Left" Margin="39,90,0,0" Name="groupBox11" VerticalAlignment="Top" Width="305">
+                        <Grid>
+                            <Label Content="Rotate Type:" Height="28" HorizontalAlignment="Left" Margin="18,37,0,0" Name="label18" VerticalAlignment="Top" />
+                            <ComboBox Height="23" HorizontalAlignment="Left" Margin="105,37,0,0" Name="comboBox_RotateType" VerticalAlignment="Top" Width="181" DropDownClosed="comboBox_RotateType_DropDownClosed">
+                                <ComboBoxItem>NONE</ComboBoxItem>
+                                <ComboBoxItem>Clockwise 90</ComboBoxItem>
+                                <ComboBoxItem>Counter Clockwise 90</ComboBoxItem>                              
+                            </ComboBox>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
